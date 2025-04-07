@@ -36,11 +36,11 @@ def generate_launch_description():
         MoveItConfigsBuilder("kuka_kr120r2500pro", package_name="kuka_moveit")
         .robot_description(
             file_path="config/kuka_kr120r2500pro.urdf.xacro",
-            mappings={
-                "ros2_control_hardware_type": LaunchConfiguration(
-                    "ros2_control_hardware_type"
-                )
-            },
+            # mappings={
+            #     "ros2_control_hardware_type": LaunchConfiguration(
+            #         "ros2_control_hardware_type"
+            #     )
+            # },
         )
         .robot_description_semantic(file_path="config/kuka_kr120r2500pro.srdf")
         .planning_scene_monitor(

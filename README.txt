@@ -25,3 +25,15 @@ Currently ros2_control is having issues. I'm going to create a package and build
 I'm using this to load the controllers <plugin>mock_components/GenericSystem</plugin>
 
 Furthermore, I've messed a little with the gz_workspace, asking it to export an interface. So if I have lots of issues i might have to reinstall that.
+
+
+
+
+
+I've disabled this guy in my-demo.launch.py
+# mappings={
+#     "ros2_control_hardware_type": LaunchConfiguration(
+#         "ros2_control_hardware_type"
+#     )
+# },
+
