@@ -11,10 +11,13 @@ from moveit_configs_utils import MoveItConfigsBuilder
 
 def generate_launch_description():
 
+    default_rviz_config = os.path.join(get_package_share_directory('kuka_moveit'), 'config/moveit.rviz')
+
+
     # Command-line arguments
     rviz_config_arg = DeclareLaunchArgument(
         "rviz_config",
-        default_value="config/moveit.rviz",
+        default_value=default_rviz_config,
         description="RViz configuration file",
     )
 
