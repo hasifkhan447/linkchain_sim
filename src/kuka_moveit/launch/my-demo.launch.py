@@ -88,7 +88,7 @@ def generate_launch_description():
         executable="static_transform_publisher",
         name="static_transform_publisher",
         output="log",
-        arguments=["0.0", "0.0", "0.0", "0.0", "0.0", "map", "base_link"],
+        arguments=["0.0", "0.0", "0.0", "0.0", "0.0", "0.0", "map", "base_link"],
     )
 
     # Publish TF
@@ -105,7 +105,8 @@ def generate_launch_description():
         get_package_share_directory("kuka_moveit"),
         "config",
         "ros2_controllers.yaml",
-    )
+    ),
+    
     ros2_control_node = Node(
         package="controller_manager",
         executable="ros2_control_node",
