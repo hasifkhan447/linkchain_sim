@@ -38,3 +38,9 @@ I've disabled this guy in my-demo.launch.py
 # },
 
 export GZ_SIM_SYSTEM_PLUGIN_PATH=install/gz_ros2_control/lib -> how to make the controllers load
+
+
+
+#TODO: Fix robot state publisher + broadcaster issue
+
+# Add SDF file 

@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 50
+    update_rate: 100
     use_sim_time: true
 
     joint_state_broadcaster:
@@ -11,7 +11,7 @@ controller_manager:
 
 Arm_controller:
   ros__parameters:
-    publish_rate: 50
+    publish_rate: 100
     action_ns: "follow_joint_trajectory"  # Specify the correct action namespace
     joints:
       - joint_a1
