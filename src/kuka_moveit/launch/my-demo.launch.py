@@ -21,9 +21,6 @@ def generate_launch_description():
         description="RViz configuration file",
     )
 
-    db_arg = DeclareLaunchArgument(
-        "db", default_value="False", description="Database flag"
-    )
 
     ros2_control_hardware_type = DeclareLaunchArgument(
         "ros2_control_hardware_type",
@@ -109,7 +106,7 @@ def generate_launch_description():
     ros2_controllers_path = os.path.join(
         get_package_share_directory("kuka_moveit"),
         "config",
-        "ros2_controllers.yaml",
+        "ros2_control.yaml",
     ),
     
     ros2_control_node = Node(
@@ -125,15 +122,15 @@ def generate_launch_description():
         output="screen",
     )
 
-    joint_state_broadcaster_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=[
-            "joint_state_broadcaster",
-            "--controller-manager",
-            "/controller_manager",
-        ],
-    )
+    # joint_state_broadcaster_spawner = Node(
+    #     package="controller_manager",
+    #     executable="spawner",
+    #     arguments=[
+    #         "joint_state_broadcaster",
+    #         "--controller-manager",
+    #         "/controller_manager",
+    #     ],
+    # )
 
 
     arm_controller_spawner = Node(
@@ -173,14 +170,13 @@ def generate_launch_description():
     return LaunchDescription(
         [
             rviz_config_arg,
-            db_arg,
             ros2_control_hardware_type,
             rviz_node,
             # static_tf_node,
             # robot_state_publisher,
             move_group_node,
             ros2_control_node,
-            joint_state_broadcaster_spawner,
+            # joint_state_broadcaster_spawner,
             arm_controller_spawner
         ]
     )

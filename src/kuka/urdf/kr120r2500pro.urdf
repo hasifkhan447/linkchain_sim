@@ -224,8 +224,8 @@
           <parameters>$(find kuka)/config/controllers.yaml</parameters>
         </plugin> -->
     <gazebo>
-      <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-        <parameters>/home/hak/Desktop/synced/work/sem6/edi/jazzy_ws/install/kuka/share/kuka/config/controllers.yaml</parameters>
+      <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+        <parameters>/home/hak/Desktop/synced/work/sem6/edi/jazzy_ws/install/kuka_moveit/share/kuka_moveit/config/controllers.yaml</parameters>
       </plugin>
     </gazebo>
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
@@ -239,7 +239,6 @@
       <joint_name>joint_a6</joint_name>
     </plugin>
     <plugin filename="gz-sim-joint-trajectory-controller-system" name="gz::sim::systems::JointTrajectoryController">
-      <!-- Note: You can also specify a custom topic for the joint trajectory commands -->
       <topic>/Arm_controller/joint_trajectory</topic>
     </plugin>
   </gazebo>

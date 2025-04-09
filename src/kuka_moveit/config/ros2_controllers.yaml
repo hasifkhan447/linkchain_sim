@@ -2,22 +2,16 @@
 controller_manager:
   ros__parameters:
     update_rate: 100  # Hz
-    use_sim_time: true
-
-
-    # joint_state_broadcaster:
-    #   type: joint_state_broadcaster/JointStateBroadcaster
-
 
     Arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
 
 
+    # joint_state_broadcaster:
+    #   type: joint_state_broadcaster/JointStateBroadcaster
 
 Arm_controller:
   ros__parameters:
-    publish_rate: 100
-    action_ns: "follow_joint_trajectory"
     joints:
       - joint_a1
       - joint_a2
@@ -30,6 +24,4 @@ Arm_controller:
     state_interfaces:
       - position
       - velocity
-
-    allow_partial_joints_goal: true
     allow_nonzero_velocity_at_trajectory_end: true

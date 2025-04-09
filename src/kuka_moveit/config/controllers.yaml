@@ -1,7 +1,7 @@
 controller_list:
 - name: Arm_controller
   action_ns: follow_joint_trajectory
-  type: FollowJointTrajectory
+  type: joint_trajectory_controller/JointTrajectoryController
   default: true
   joints:
     - joint_a1

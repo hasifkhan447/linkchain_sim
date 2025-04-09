@@ -131,10 +131,8 @@ def generate_launch_description():
             executable="static_transform_publisher",
             name="static_transform_publisher",
             output="log",
-            arguments=["--x 0.0 --y 0.0 --z 0.0 --roll 0.0 --pitch 0.0 --yaw  0.0 --frame-id map --child-frame-id base_link"],
+            arguments=["--x 0.0 --y 0.0 --z 0.0 --roll 0.0 --pitch 0.0 --yaw  0.0 --frame-id base_link "],
         ),
-
-
 
         
         # Node(
@@ -172,17 +170,17 @@ def generate_launch_description():
 
 
 
-        TimerAction(
-            period=8.0,  # Delay of 2 seconds
-            actions=[
+        # TimerAction(
+        #     period=8.0,  # Delay of 2 seconds
+        #     actions=[
 
-                IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(
-                        os.path.join(get_package_share_directory('kuka_moveit'), 'launch', 'my-demo.launch.py')
-                    )
-                ),
-            ]
-        ),
+        #         IncludeLaunchDescription(
+        #             PythonLaunchDescriptionSource(
+        #                 os.path.join(get_package_share_directory('kuka_moveit'), 'launch', 'my-demo.launch.py')
+        #             )
+        #         ),
+        #     ]
+        # ),
 
 
 

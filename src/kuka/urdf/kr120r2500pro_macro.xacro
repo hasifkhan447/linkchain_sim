@@ -227,8 +227,9 @@
         </plugin> -->
 
         <gazebo>
-          <plugin filename="gz_ros2_control-system" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-            <parameters>$(find kuka)/config/controllers.yaml</parameters>
+          <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+            <parameters>$(find kuka_moveit)/config/controllers.yaml</parameters>
+            <robot_param_node>robot_state_publisher</robot_param_node>
           </plugin>
         </gazebo>
 
@@ -251,7 +252,6 @@
         <plugin
           filename="gz-sim-joint-trajectory-controller-system"
           name="gz::sim::systems::JointTrajectoryController">
-          <!-- Note: You can also specify a custom topic for the joint trajectory commands -->
           <topic>/Arm_controller/joint_trajectory</topic>
         </plugin>
 
