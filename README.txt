@@ -44,3 +44,7 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=install/gz_ros2_control/lib -> how to make the 
 #TODO: Fix robot state publisher + broadcaster issue
 
 # Add SDF file 
+
+
+
+I found a good resource here: https://robotics.stackexchange.com/questions/103881/gazebo-plugin-location-and-documentation

@@ -17,9 +17,10 @@ import os
 def generate_launch_description():
     pkg_path = get_package_share_directory('kuka')
 
-
+    gz_sim_path = os.path.join(os.getcwd(), "install", "gz_ros2_control", "lib") + ":"
     os.environ["GZ_SIM_RESOURCE_PATH"] = os.path.join(os.getcwd(), "src") + ":"
-    os.environ["GZ_SIM_SYSTEM_PLUGIN_PATH"] = os.path.join(os.getcwd(), "install" "gz_ros2_control" "lib") + ":"
+    os.environ["GZ_SIM_SYSTEM_PLUGIN_PATH"] = gz_sim_path
+    print(gz_sim_path)
 
     xacro_urdf_path = os.path.join(pkg_path, 'urdf', 'kr120r2500pro.xacro')
     robot_desc = xacro.process_file(xacro_urdf_path).toprettyxml(indent='  ')
