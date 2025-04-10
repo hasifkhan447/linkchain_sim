@@ -7,7 +7,7 @@ moveit_setup_assistant_config:
   package_settings:
     author_name: hk08394@st.habib.edu.pk
     author_email: hk08394@st.habib.edu.pk
-    generated_timestamp: 1744203876
+    generated_timestamp: 1744273513
   control_xacro:
     command:
       - position

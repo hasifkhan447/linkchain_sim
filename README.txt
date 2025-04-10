@@ -47,4 +47,24 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=install/gz_ros2_control/lib -> how to make the 
 
 
 
+
+
+
 I found a good resource here: https://robotics.stackexchange.com/questions/103881/gazebo-plugin-location-and-documentation
+
+
+
+
+
+
+
+
+Interesting errors:
+
+[ros2_control_node-7] [ERROR] [1744278669.909881058] [controller_manager]: The 'type' param was not defined for 'Arm_controller'.
+
+
+[move_group-6] [ERROR] [1744278670.309465933] [move_group.moveit.moveit.plugins.simple_controller_manager]: No action namespace specified for controller `Arm_controller` through parameter `moveit_simple_controller_manager.Arm_controller.action_ns`
+
+
+

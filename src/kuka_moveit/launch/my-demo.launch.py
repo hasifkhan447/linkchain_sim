@@ -60,7 +60,7 @@ def generate_launch_description():
             {'use_sim_time': True}  # <-- ADD THIS LINE
 
             ],
-        arguments=["--ros-args", "--log-level", "info"],
+        # arguments=["--ros-args", "--log-level", "info"],
     )
 
     # RViz
@@ -103,11 +103,16 @@ def generate_launch_description():
     # )
 
     # ros2_control using FakeSystem as hardware
+
+    print(f"share directory{get_package_share_directory("kuka_moveit")}")
+
     ros2_controllers_path = os.path.join(
         get_package_share_directory("kuka_moveit"),
         "config",
-        "ros2_control.yaml",
+        "ros2_controllers.yaml",
     ),
+
+    print(f"My ros2 controllers path {ros2_controllers_path}")
     
     ros2_control_node = Node(
         package="controller_manager",
@@ -119,8 +124,12 @@ def generate_launch_description():
         remappings=[
             ("/controller_manager/robot_description", "/robot_description"),
         ],
+        arguments=["--ros-args", "--log-level", "controller_manager:=debug"],
+
         output="screen",
     )
+
+
 
     # joint_state_broadcaster_spawner = Node(
     #     package="controller_manager",
@@ -136,7 +145,8 @@ def generate_launch_description():
     arm_controller_spawner = Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["Arm_controller", "--controller-manager", "/controller_manager"],
+            arguments=["Arm_controller", "--controller-manager", "/controller_manager",
+                        "--ros-args", "--log-level", "debug" ],
             output="screen",
         )
 

@@ -91,20 +91,6 @@ def generate_launch_description():
             output='screen'
         ),
 
-        
-        # Don't need this since we'll get this from gazebo
-        # Node(
-        #     package='joint_state_publisher',
-        #     executable='joint_state_publisher',
-        #     name='joint_state_publisher',
-        #     parameters=[
-        #         {'use_sim_time': True},  # Enable sim time
-        #         {'use_gui': True}
-        #         ],  # Optional: Enable GUI
-        # ),
-
-
-
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
@@ -146,6 +132,20 @@ def generate_launch_description():
         #         rviz_config_path  # or your RViz config file if named differently
         #     )],
         # ),
+
+        # Node(
+        #     package="controller_manager",
+        #     executable="ros2_control_node",
+        #     parameters=[
+        #         kuka_control,
+        #         {'use_sim_time': True}  # Enable use of simulated time
+        #     ],
+        #     remappings=[
+        #         ("/controller_manager/robot_description", "/robot_description"),
+        #     ],
+        #     output="screen"
+        # ),
+
             
 
 

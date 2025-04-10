@@ -1,5 +1,5 @@
 controller_list:
-- name: Arm_controller
+- name: arm_controller
   action_ns: follow_joint_trajectory
   type: joint_trajectory_controller/JointTrajectoryController
   default: true

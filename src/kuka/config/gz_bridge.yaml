@@ -18,9 +18,9 @@
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
 
-- ros_topic_name: "/Arm_controller/joint_trajectory"
-  gz_topic_name: "/Arm_controller/joint_trajectory"
-  ros_type_name: "trajectory_msgs/msg/JointTrajectory"
-  gz_type_name: "gz.msgs.JointTrajectory"
-  direction: ROS_TO_GZ
+# - ros_topic_name: "/Arm_controller/joint_trajectory"
+#   gz_topic_name: "/Arm_controller/joint_trajectory"
+#   ros_type_name: "trajectory_msgs/msg/JointTrajectory"
+#   gz_type_name: "gz.msgs.JointTrajectory"
+#   direction: ROS_TO_GZ
 
