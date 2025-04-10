@@ -8,7 +8,7 @@
   gz_topic_name: "joint_states"
   ros_type_name: "sensor_msgs/msg/JointState"
   gz_type_name: "gz.msgs.Model"
-  direction: GZ_TO_ROS
+  direction: BIDIRECTIONAL
 
 
 # gz topic published for transforms
@@ -18,9 +18,35 @@
   gz_type_name: "gz.msgs.Pose_V"
   direction: GZ_TO_ROS
 
-# - ros_topic_name: "/Arm_controller/joint_trajectory"
-#   gz_topic_name: "/Arm_controller/joint_trajectory"
-#   ros_type_name: "trajectory_msgs/msg/JointTrajectory"
-#   gz_type_name: "gz.msgs.JointTrajectory"
-#   direction: ROS_TO_GZ
+- ros_topic_name: "/Arm_controller/joint_trajectory"
+  gz_topic_name: "/Arm_controller/joint_trajectory"
+  ros_type_name: "trajectory_msgs/msg/JointTrajectory"
+  gz_type_name: "gz.msgs.JointTrajectory"
+  direction: ROS_TO_GZ
 
+- ros_topic_name: "/Arm_controller/follow_joint_trajectory"
+  gz_topic_name: "/Arm_controller/joint_trajectory"
+  ros_type_name: "control_msgs/action/FollowJointTrajectory"
+  gz_type_name: "gz.msgs.Model"
+  direction: BIDIRECTIONAL"
+
+# Bridge for receiving joint states from Gazebo to ROS 2
+- ros_topic_name: "joint_states"
+  gz_topic_name: "joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: "BIDIRECTIONAL"
+
+
+- ros_topic_name: "/Arm_controller/follow_joint_trajectory/goal"
+  gz_topic_name: "/Arm_controller/joint_trajectory/goal"
+  ros_type_name: "control_msgs/action/FollowJointTrajectory"
+  gz_type_name: "gz.msgs.Model"
+  direction: "BIDIRECTIONAL"
+
+# Action Result: FollowJointTrajectory
+- ros_topic_name: "/Arm_controller/follow_joint_trajectory/result"
+  gz_topic_name: "/Arm_controller/joint_trajectory/result"
+  ros_type_name: "control_msgs/action/FollowJointTrajectory"
+  gz_type_name: "gz.msgs.Model"
+  direction: "BIDIRECTIONAL"

@@ -124,29 +124,31 @@ def generate_launch_description():
         remappings=[
             ("/controller_manager/robot_description", "/robot_description"),
         ],
-        arguments=["--ros-args", "--log-level", "controller_manager:=debug"],
+        # arguments=["--ros-args", "--log-level", "controller_manager:=debug"],
 
         output="screen",
     )
 
 
 
-    # joint_state_broadcaster_spawner = Node(
-    #     package="controller_manager",
-    #     executable="spawner",
-    #     arguments=[
-    #         "joint_state_broadcaster",
-    #         "--controller-manager",
-    #         "/controller_manager",
-    #     ],
-    # )
+    joint_state_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=[
+            "joint_state_broadcaster",
+            "--controller-manager",
+            "/controller_manager",
+        ],
+    )
 
 
     arm_controller_spawner = Node(
             package="controller_manager",
             executable="spawner",
-            arguments=["Arm_controller", "--controller-manager", "/controller_manager",
-                        "--ros-args", "--log-level", "debug" ],
+            arguments=["Arm_controller", "--controller-manager", "/controller_manager"
+                    #    , "--ros-args", "--log-level", "debug" 
+                        
+                        ],
             output="screen",
         )
 

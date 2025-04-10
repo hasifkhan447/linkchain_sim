@@ -157,6 +157,8 @@
     <child link="link_1"/>
     <axis xyz="0 0 -1"/>
     <limit effort="0" lower="-3.2288591161895095" upper="3.2288591161895095" velocity="2.722713633111154"/>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- joint 2 (A2) -->
   <joint name="joint_a2" type="revolute">
@@ -165,6 +167,8 @@
     <child link="link_2"/>
     <axis xyz="0 1 0"/>
     <limit effort="0" lower="-2.705260340591211" upper="0.6108652381980153" velocity="2.722713633111154"/>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- joint 3 (A3) -->
   <joint name="joint_a3" type="revolute">
@@ -173,6 +177,11 @@
     <child link="link_3"/>
     <axis xyz="0 1 0"/>
     <limit effort="0" lower="-2.2689280275926285" upper="2.6878070480712677" velocity="2.722713633111154"/>
+    <sensor name="joint_a3_position" type="force_torque">
+      <interface>position</interface>
+    </sensor>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- joint 4 (A4) -->
   <joint name="joint_a4" type="revolute">
@@ -181,6 +190,8 @@
     <child link="link_4"/>
     <axis xyz="-1 0 0"/>
     <limit effort="0" lower="-6.1086523819801535" upper="6.1086523819801535" velocity="5.759586531581287"/>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- joint 5 (A5) -->
   <joint name="joint_a5" type="revolute">
@@ -189,6 +200,8 @@
     <child link="link_5"/>
     <axis xyz="0 1 0"/>
     <limit effort="0" lower="-2.2689280275926285" upper="2.2689280275926285" velocity="5.759586531581287"/>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- joint 6 (A6) -->
   <joint name="joint_a6" type="revolute">
@@ -197,6 +210,8 @@
     <child link="link_6"/>
     <axis xyz="-1 0 0"/>
     <limit effort="0" lower="-6.1086523819801535" upper="6.1086523819801535" velocity="10.733774899765127"/>
+    <state_interace name="position"/>
+    <state_interace name="velocity"/>
   </joint>
   <!-- tool frame - fixed frame -->
   <joint name="joint_a6-flange" type="fixed">
@@ -223,12 +238,10 @@
     <!-- <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
           <parameters>$(find kuka)/config/controllers.yaml</parameters>
         </plugin> -->
-    <gazebo>
-      <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
-        <parameters>/home/hak/Desktop/synced/work/sem6/edi/jazzy_ws/install/kuka_moveit/share/kuka_moveit/config/controllers.yaml</parameters>
-        <robot_param_node>robot_state_publisher</robot_param_node>
-      </plugin>
-    </gazebo>
+    <plugin filename="libgz_ros2_control-system.so" name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+      <parameters>/home/hak/Desktop/synced/work/sem6/edi/jazzy_ws/install/kuka_moveit/share/kuka_moveit/config/ros2_controllers.yaml</parameters>
+      <!-- <robot_param_node>robot_state_publisher</robot_param_node> -->
+    </plugin>
     <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
       <topic>joint_states</topic>
       <!--from <ros><remapping> -->
