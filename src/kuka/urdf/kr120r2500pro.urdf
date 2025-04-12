@@ -254,6 +254,12 @@
     </plugin>
     <plugin filename="gz-sim-joint-trajectory-controller-system" name="gz::sim::systems::JointTrajectoryController">
       <topic>/Arm_controller/joint_trajectory</topic>
+      <joint_name>joint_a1</joint_name>
+      <joint_name>joint_a2</joint_name>
+      <joint_name>joint_a3</joint_name>
+      <joint_name>joint_a4</joint_name>
+      <joint_name>joint_a5</joint_name>
+      <joint_name>joint_a6</joint_name>
     </plugin>
   </gazebo>
   <ros2_control name="GazeboSimSystem" type="system">
