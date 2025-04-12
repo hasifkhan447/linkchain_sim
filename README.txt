@@ -1,3 +1,4 @@
+Personal log:
 I'm creating a virtual environment here. We'll need to source this every time for installing packages. It has catkin_pkg in it.
 
 Remember that UTC -> UCT symlink exists and is jugar
@@ -53,14 +54,20 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=install/gz_ros2_control/lib -> how to make the 
 I found a good resource here: https://robotics.stackexchange.com/questions/103881/gazebo-plugin-location-and-documentation
 
 
+Main README:
+1. Set up a computer with Ubuntu 24.04 and ROS2 Jazzy (install the full desktop version)
+2. Source /opt/ros/jazzy/setup.sh
+3. Install dependencies using rosdep:
+    rosdep install --from-paths src --ignore-src -r -y
+4. Build with symlink install
+    colon build --symlink-install 
+5. Source the install:
+    source install/setup.sh
+5. Run the kuka launch example by doing:
+    ros2 launch kuka kuka_launch.py
 
 
 
-
-
-
-
-Also the issue might have to do with trajectory limits, which are:
 
 
 
